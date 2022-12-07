@@ -7,7 +7,7 @@ const blogRoutes = require('./routes/blogRoutes');
 const profilePictures = require('./routes/pictureRoutes');
 const {notFound, errorHandler} = require('./middlewares/errorMiddleware');
 const path = require("path");
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
 const app = express();
 
@@ -27,9 +27,9 @@ app.use('/api/users', userRoutes)
 app.use('/api/bloggers', blogRoutes)
 app.use('/api/profilePictures', profilePictures)
 
-if (process.env.NODE_ENV === 'development') {
-  app.use(morgan('dev')) //* morgan displays each request in the console
-}
+// if (process.env.NODE_ENV === 'development') {
+//   app.use(morgan('dev')) //* morgan displays each request in the console
+// }
 
 // --------------- deployment ------------
 __dirname = path.resolve();
@@ -46,7 +46,6 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 // --------------- end ------------
-
 
 
 
